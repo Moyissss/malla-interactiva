@@ -112,22 +112,3 @@ document.body.insertBefore(btn, malla);
 
 // Crear materias
 materias.forEach(crearMateria);
-
-// Dibujar conexiones entre materias con LeaderLine
-window.addEventListener("load", () => {
-  materias.forEach(m => {
-    m.prerrequisitos.forEach(pr => {
-      const start = document.getElementById(pr);
-      const end = document.getElementById(m.id);
-      if (start && end) {
-        new LeaderLine(start, end, {
-          color: "#555",
-          size: 2,
-          path: "straight",
-          startPlug: "disc",
-          endPlug: "arrow"
-        });
-      }
-    });
-  });
-});
